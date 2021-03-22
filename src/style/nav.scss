@@ -1,16 +1,24 @@
 .nav-bar-wrapper {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 42px;
   background-color: $violet;
 
   .right {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  .left {
+    display: flex;
+    align-items: flex-end;
   }
 
   .nav-link {
     display: flex;
     align-items: right;
+    border-bottom: 4px solid transparent;
 
     a {
       text-decoration: none;
