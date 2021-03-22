@@ -1,0 +1,29 @@
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $violet;
+
+  .right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: right;
+
+    a {
+      text-decoration: none;
+      color: $green;
+
+      &:hover {
+        color: $dark-green;
+        transition: 0.5s ease-in-out;
+      }
+    }
+
+    .nav-link-active {
+      border-bottom: 4px solid black;
+    }
+  }
+}
