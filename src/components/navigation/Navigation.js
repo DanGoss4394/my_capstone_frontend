@@ -19,11 +19,11 @@ const Navigation = () => {
       <div className="right">
         <div className="nav-link">
           {/* <AuthContext.Provider> */}
-            {/* {loggedInStatus === "LOGGED_IN" ? ( */}
-              <NavLink to="/auth" activeClassName="nav-link-active">
-                <button className="btn">Login</button>
-              </NavLink>
-            {/* ) : (
+          {/* {loggedInStatus === "LOGGED_IN" ? ( */}
+          <NavLink to="/auth" activeClassName="nav-link-active">
+            <button className="nav_btn">Login</button>
+          </NavLink>
+          {/* ) : (
               <LogoutBtn />
             )}
           </AuthContext.Provider> */}
@@ -31,19 +31,19 @@ const Navigation = () => {
 
         <div className="nav-link">
           <NavLink to="/blog" activeClassName="nav-link-active">
-            <button className="btn">Blog</button>
+            <button className="nav_btn">Blog</button>
           </NavLink>
         </div>
 
         <div className="nav-link">
           <NavLink to="/profile" activeClassName="nav-link-active">
-            <button className="btn">Profile</button>
+            <button className="nav_btn">Profile</button>
           </NavLink>
         </div>
 
         <div className="nav-link">
           <NavLink to="/schedule" activeClassName="nav-link-active">
-            <button className="btn">Schedules</button>
+            <button className="nav_btn">Schedules</button>
           </NavLink>
         </div>
       </div>

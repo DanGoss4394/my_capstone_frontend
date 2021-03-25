@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import BlogForm from "../Blog/BlogForm";
 
 const Blog = () => {
   return (
     <div>
-      <h1>Blog page</h1>
+      <BlogForm />
     </div>
   );
 };

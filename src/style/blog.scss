@@ -1,0 +1,14 @@
+.blog-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .heading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inputfield {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+}
