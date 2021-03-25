@@ -1,14 +1,16 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./style/main.scss";
-import Auth from "./components/pages/Auth";
-import Blog from "./components/pages/Blog";
-import Profile from "./components/pages/Profile";
-import Schedule from "./components/pages/Schedule";
-import Home from "./components/pages/Home";
-import Navigation from "./components/navigation/Navigation";
+import Auth from "./pages/Auth";
+import Blog from "./pages/Blog";
+import Profile from "./pages/Profile";
+import Schedule from "./pages/Schedule";
+import Home from "./pages/Home";
+import Navigation from "./navigation/Navigation";
+import { API_URL } from "../api/api";
 
 function App() {
+  console.log(API_URL);
   return (
     <div className="App">
       <BrowserRouter>
