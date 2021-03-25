@@ -1,0 +1,9 @@
+.auth_container {
+  display: flex;
+  justify-content: center;
+}
+
+.user_input {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}

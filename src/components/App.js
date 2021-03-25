@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "./style/main.scss";
+import "../style/main.scss";
 import Auth from "./pages/Auth";
 import Blog from "./pages/Blog";
 import Profile from "./pages/Profile";
