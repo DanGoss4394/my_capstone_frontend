@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Navigation from "./navigation/Navigation";
 import { API_URL } from "../api/api";
 
+
 function App() {
   console.log(API_URL);
   return (

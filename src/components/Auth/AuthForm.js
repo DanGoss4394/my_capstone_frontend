@@ -4,6 +4,7 @@ import AuthContext from "../contexts/AuthContext";
 
 const AuthForm = () => {
   const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formToShow, setFormToShow] = useState("login");
 
@@ -15,10 +16,9 @@ const AuthForm = () => {
       method: "post",
       url: `http://localhost:5000/api/v1/${formToShow}`,
       data: {
-        username: username,
-        password: password,
-        // username,
-        // password,
+        username,
+        password,
+        email,
       },
       withCredentials: true,
     })
@@ -56,6 +56,15 @@ const AuthForm = () => {
             placeholder="Username..."
             value={username}
             onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
+        <div className="user_input">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="user_input">
