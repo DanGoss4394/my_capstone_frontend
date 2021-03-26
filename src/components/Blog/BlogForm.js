@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import axois from "axios";
 
+import { API_URL } from "../../api/api";
+
 const BlogForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -10,7 +12,7 @@ const BlogForm = () => {
     e.preventDefault();
     axois({
       method: "post",
-      url: `http://localhost:5000/api/v1/blog}`,
+      url: `${API_URL}v1/blog`,
       data: {
         title,
         content,
