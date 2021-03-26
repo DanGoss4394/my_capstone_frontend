@@ -7,7 +7,7 @@ const AuthForm = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [formToShow, setFormToShow] = useState("Login");
+  const [formToShow, setFormToShow] = useState("login");
 
   const { handleSuccessfulLogin } = useContext(AuthContext);
 
@@ -31,15 +31,15 @@ const AuthForm = () => {
   };
 
   const handleFormToShow = () => {
-    if (formToShow === "Login") {
-      setFormToShow("Register");
+    if (formToShow === "login") {
+      setFormToShow("register");
     } else if (formToShow) {
-      setFormToShow("Login");
+      setFormToShow("login");
     }
   };
 
   const formQuestionText = () => {
-    if (formToShow === "Login") {
+    if (formToShow === "login") {
       return "Need an account? Register";
     } else {
       return "Already have an account? Login";
@@ -48,7 +48,7 @@ const AuthForm = () => {
 
   return (
     <div>
-      <h1>{formToShow}</h1>
+      <h1 style={{ textTransform: "capitalize" }}>{formToShow}</h1>
       <form onSubmit={handleSubmit}>
         <div className="user_input">
           <input
@@ -79,7 +79,11 @@ const AuthForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="btn"
+          style={{ textTransform: "capitalize" }}
+        >
           {formToShow}
         </button>
         <div onClick={handleFormToShow}>{formQuestionText()}</div>
