@@ -10,7 +10,6 @@ const Auth = () => {
   return (
     <div className="auth_container">
       <div className="auth_wrapper">
-        <h1>Auth page</h1>
         {loggedInStatus === "LOGGED_IN" ? <LogoutBtn /> : <AuthForm />}
       </div>
     </div>

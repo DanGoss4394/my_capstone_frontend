@@ -7,7 +7,7 @@ const AuthForm = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [formToShow, setFormToShow] = useState("login");
+  const [formToShow, setFormToShow] = useState("Login");
 
   const { handleSuccessfulLogin } = useContext(AuthContext);
 
@@ -31,15 +31,15 @@ const AuthForm = () => {
   };
 
   const handleFormToShow = () => {
-    if (formToShow === "login") {
-      setFormToShow("register");
+    if (formToShow === "Login") {
+      setFormToShow("Register");
     } else if (formToShow) {
-      setFormToShow("login");
+      setFormToShow("Login");
     }
   };
 
   const formQuestionText = () => {
-    if (formToShow === "login") {
+    if (formToShow === "Login") {
       return "Need an account? Register";
     } else {
       return "Already have an account? Login";
@@ -59,7 +59,7 @@ const AuthForm = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
-        {formToShow === "register" ? (
+        {formToShow === "Register" ? (
           <div className="user_input">
             <input
               type="email"
