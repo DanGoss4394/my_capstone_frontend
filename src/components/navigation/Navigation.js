@@ -18,15 +18,13 @@ const Navigation = () => {
 
       <div className="right">
         <div className="nav-link">
-          {/* <AuthContext.Provider> */}
-          {/* {loggedInStatus === "LOGGED_IN" ? ( */}
-          <NavLink to="/auth" activeClassName="nav-link-active">
-            <button className="nav_btn">Login</button>
-          </NavLink>
-          {/* ) : (
-              <LogoutBtn />
-            )}
-          </AuthContext.Provider> */}
+          {loggedInStatus === "LOGGED_IN" ? (
+            <LogoutBtn />
+          ) : (
+            <NavLink to="/auth" activeClassName="nav-link-active">
+              <button className="nav_btn">Login</button>
+            </NavLink>
+          )}
         </div>
 
         <div className="nav-link">

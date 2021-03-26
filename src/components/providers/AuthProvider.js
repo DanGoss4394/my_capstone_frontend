@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 const AuthProvider = (props) => {
   const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
+  let history = useHistory();
 
   useEffect(() => {
     axios({
@@ -22,7 +23,7 @@ const AuthProvider = (props) => {
 
   const handleSuccessfulLogin = () => {
     setLoggedInStatus("LOGGED_IN");
-    return <Redirect to="/" />;
+    history.push("/");
   };
 
   const handleSuccessfulLogout = () => {
@@ -33,7 +34,7 @@ const AuthProvider = (props) => {
     })
       .then(() => {
         setLoggedInStatus("NOT_LOGGED_IN");
-        return <Redirect to="/" />;
+        history.push("/");
       })
       .catch((err) => console.log(err));
   };

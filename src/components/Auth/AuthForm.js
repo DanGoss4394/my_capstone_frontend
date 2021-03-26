@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axois from "axios";
 import AuthContext from "../contexts/AuthContext";
+import { API_URL } from "../../api/api";
 
 const AuthForm = () => {
   const [username, setUserName] = useState("");
@@ -14,7 +15,7 @@ const AuthForm = () => {
     e.preventDefault();
     axois({
       method: "post",
-      url: `http://localhost:5000/api/v1/${formToShow}`,
+      url: `${API_URL}v1/${formToShow}`,
       data: {
         username,
         password,
@@ -58,15 +59,17 @@ const AuthForm = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
-        <div className="user_input">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+        {formToShow === "register" ? (
+          <div className="user_input">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+        ) : null}
         <div className="user_input">
           <input
             type="password"
