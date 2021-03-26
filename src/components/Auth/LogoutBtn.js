@@ -5,7 +5,9 @@ const LogoutBtn = () => {
   const { handleSuccessfulLogout } = useContext(AuthContext);
   return (
     <div>
-      <button onClick={handleSuccessfulLogout}>Logout</button>
+      <button onClick={handleSuccessfulLogout} className="nav_btn">
+        Logout
+      </button>
     </div>
   );
 };

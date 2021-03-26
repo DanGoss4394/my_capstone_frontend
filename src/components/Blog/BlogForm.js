@@ -49,10 +49,10 @@ const BlogForm = () => {
                 onChange={(e) => setContent(e.target.value)}
               />
             </div>
+            <button type="submit" className="btn">
+              Submit Blog
+            </button>
           </div>
-          <button type="submit" className="btn">
-            Submit Blog
-          </button>
         </div>
 
         <div className="video">
@@ -78,10 +78,10 @@ const BlogForm = () => {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
+            <button type="submit" className="btn">
+              Submit Video
+            </button>
           </div>
-          <button type="submit" className="btn">
-            Submit Video
-          </button>
         </div>
       </form>
     </div>
