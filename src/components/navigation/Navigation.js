@@ -15,6 +15,9 @@ const Navigation = () => {
           </NavLink>
         </div>
       </div>
+      <div className="middle">
+        <h1>SFANS</h1>
+      </div>
 
       <div className="right">
         {/* <div className="nav-link">
