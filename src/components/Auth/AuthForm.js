@@ -24,8 +24,10 @@ const AuthForm = () => {
       withCredentials: true,
     })
       .then((res) => {
-        console.log(res);
-        handleSuccessfulLogin();
+        if (res.data.message === "User Verified") {
+          console.log(res);
+          handleSuccessfulLogin(res.data.user_id);
+        }
       })
       .catch((err) => console.log(err));
   };

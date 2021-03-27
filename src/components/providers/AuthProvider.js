@@ -5,6 +5,7 @@ import AuthContext from "../contexts/AuthContext";
 
 const AuthProvider = (props) => {
   const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
+  const [userId, setUserId] = useState(null);
   let history = useHistory();
 
   useEffect(() => {
@@ -14,15 +15,17 @@ const AuthProvider = (props) => {
       withCredentials: true,
     })
       .then((res) => {
-        if (res.data === "User Loggedin Via Cookie") {
+        if (res.data.message === "User Loggedin Via Cookie") {
+          setUserId(res.data.user_id);
           setLoggedInStatus("LOGGED_IN");
         }
       })
       .catch((err) => console.log(err));
   }, []);
 
-  const handleSuccessfulLogin = () => {
+  const handleSuccessfulLogin = (user_id) => {
     setLoggedInStatus("LOGGED_IN");
+    setUserId(user_id);
     history.push("/");
   };
 
@@ -44,6 +47,7 @@ const AuthProvider = (props) => {
     setLoggedInStatus,
     handleSuccessfulLogin,
     handleSuccessfulLogout,
+    userId,
   };
 
   return (
