@@ -51,7 +51,7 @@ const BlogForm = () => {
             </div>
 
             <div className="content">
-              <input
+              <textarea
                 type="text"
                 name="content"
                 placeholder="Content.."
@@ -80,7 +80,7 @@ const BlogForm = () => {
               />
             </div>
             <div className="description">
-              <input
+              <textarea
                 type="text"
                 name="description"
                 placeholder="Description.."
