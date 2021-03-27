@@ -16,12 +16,15 @@ const Home = () => {
   };
 
   return (
-    <div className="home_container">
-      <div className="heading">
-        <h1>Home</h1>
+    <div className="home_container_wrapper">
+      <div className="left_column">
+        <h1>Followers</h1>
       </div>
-      <div className="home_wrapper">
+      <div className="middle_column">
         <div className="blogs">{renderBlogs()}</div>
+      </div>
+      <div className="right_column">
+        <h1>Schedule</h1>
       </div>
     </div>
   );

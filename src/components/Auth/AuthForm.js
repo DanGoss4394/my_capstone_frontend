@@ -61,7 +61,7 @@ const AuthForm = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
-        {formToShow === "Register" ? (
+        {formToShow === "register" ? (
           <div className="user_input">
             <input
               type="email"

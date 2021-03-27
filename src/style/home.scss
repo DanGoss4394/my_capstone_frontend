@@ -1,5 +1,19 @@
-.home_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.home_container_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .left_column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .middle_column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .right_column {
+    display: flex;
+    justify-content: center;
+  }
 }

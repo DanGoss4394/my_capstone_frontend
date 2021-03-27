@@ -1,0 +1,31 @@
+.profile_container_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .left_column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .middle_column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .right_column {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+  }
+
+  .top_right_column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottum_right_column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
