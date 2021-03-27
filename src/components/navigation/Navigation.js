@@ -17,7 +17,7 @@ const Navigation = () => {
       </div>
 
       <div className="right">
-        <div className="nav-link">
+        {/* <div className="nav-link">
           {loggedInStatus === "LOGGED_IN" ? (
             <LogoutBtn />
           ) : (
@@ -25,25 +25,37 @@ const Navigation = () => {
               <button className="nav_btn">Login</button>
             </NavLink>
           )}
-        </div>
+        </div> */}
 
-        <div className="nav-link">
-          <NavLink to="/blog" activeClassName="nav-link-active">
-            <button className="nav_btn">Blog</button>
-          </NavLink>
-        </div>
+        {loggedInStatus === "LOGGED_IN" ? (
+          <>
+            <div className="nav-link">
+              <LogoutBtn />
+            </div>
+            <div className="nav-link">
+              <NavLink to="/add-blog" activeClassName="nav-link-active">
+                <button className="nav_btn">Add Blog</button>
+              </NavLink>
+            </div>
 
-        <div className="nav-link">
-          <NavLink to="/profile" activeClassName="nav-link-active">
-            <button className="nav_btn">Profile</button>
-          </NavLink>
-        </div>
-
-        <div className="nav-link">
-          <NavLink to="/schedule" activeClassName="nav-link-active">
-            <button className="nav_btn">Schedules</button>
-          </NavLink>
-        </div>
+            <div className="nav-link">
+              <NavLink to="/profile" activeClassName="nav-link-active">
+                <button className="nav_btn">Profile</button>
+              </NavLink>
+            </div>
+            <div className="nav-link">
+              <NavLink to="/schedule" activeClassName="nav-link-active">
+                <button className="nav_btn">Schedules</button>
+              </NavLink>
+            </div>
+          </>
+        ) : (
+          <div className="nav-link">
+            <NavLink to="/auth" activeClassName="nav-link-active">
+              <button className="nav_btn">Login</button>
+            </NavLink>
+          </div>
+        )}
       </div>
     </div>
   );
