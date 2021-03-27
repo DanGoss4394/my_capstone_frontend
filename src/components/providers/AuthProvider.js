@@ -3,6 +3,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
+import { API_URL } from "../../api/api";
+
 const AuthProvider = (props) => {
   const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
   const [userId, setUserId] = useState(null);
@@ -11,7 +13,7 @@ const AuthProvider = (props) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:5000/api/v1/logged_in",
+      url: `${API_URL}v1/logged_in`,
       withCredentials: true,
     })
       .then((res) => {
@@ -32,7 +34,7 @@ const AuthProvider = (props) => {
   const handleSuccessfulLogout = () => {
     axios({
       method: "post",
-      url: "http://localhost:5000/api/v1/logout",
+      url: `${API_URL}v1/logout`,
       withCredentials: true,
     })
       .then(() => {
