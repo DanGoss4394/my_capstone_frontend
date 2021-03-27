@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
 import BlogContext from "../contexts/BlogContext";
 
 const Home = () => {
-  const { blogs } = useContext(BlogContext);
+  const { blogs, removeBlog } = useContext(BlogContext);
+  const { userId } = useContext(AuthContext)
 
   const renderBlogs = () => {
     return blogs.map((blog) => {
@@ -10,6 +12,7 @@ const Home = () => {
         <div>
           <h1>{blog.title}</h1>
           <p>{blog.content}</p>
+          {userId === blog.id && <button onClick={() => removeBlog(blog.id)}>Remove</button>}
         </div>
       );
     });

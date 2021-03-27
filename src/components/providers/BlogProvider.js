@@ -7,6 +7,34 @@ import { API_URL } from "../../api/api";
 const BlogProvider = (props) => {
   const [blogs, setBlogs] = useState([]);
 
+  const removeBlog = (id) => {
+    axios({
+      method: "delete",
+      url: `${API_URL}v1/delete_blog/${id}`,
+    })
+      .then((res) => {
+        const filteredBlogs = blogs.filter((blog) => id !== blog.id);
+        setBlogs(filteredBlogs);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const editBlog = (id, title, content) => {
+    axios({
+      method: "patch",
+      url: `${API_URL}v1/edit_blog/${id}`,
+      data: {
+        title,
+        content,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     axios({
       method: "get",
@@ -22,7 +50,15 @@ const BlogProvider = (props) => {
   const state = {
     blogs,
     setBlogs,
+    removeBlog,
   };
+
+  // TODO: handle delete function
+  // TODO:    if owner of blog delete
+  // TODO:    withCredentials: true
+  // TODO: handle edit function
+  // TODO:    if owner of blog edit
+  // TODO:    withCredentials: true
 
   return (
     <BlogContext.Provider value={state}>{props.children}</BlogContext.Provider>
