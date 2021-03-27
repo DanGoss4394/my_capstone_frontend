@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 import BlogContext from "../contexts/BlogContext";
 
@@ -11,10 +12,11 @@ const Profile = () => {
       .filter((blog) => userId === blog.user_id)
       .map((blog) => {
         return (
-          <div>
+          <div key={blog.id}>
             <h1>{blog.title}</h1>
             <p>{blog.content}</p>
             <button onClick={() => removeBlog(blog.id)}>Remove</button>
+            <Link to={`/edit-blog/${blog.id}`}>Edit</Link>
           </div>
         );
       });

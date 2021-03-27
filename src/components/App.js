@@ -11,6 +11,7 @@ import Navigation from "./navigation/Navigation";
 import Blog from "./pages/Blog";
 import AuthContext from "./contexts/AuthContext";
 import Nomatch from "./pages/Nomatch";
+import EditBlog from "./pages/EditBlog";
 
 function App() {
   const { loggedInStatus } = useContext(AuthContext);
@@ -18,6 +19,7 @@ function App() {
   const authorizedPages = () => {
     return [
       <Route key="add-blog" path="/add-blog" component={AddBlog} />,
+      <Route key="edit-blog" path="/edit-blog/:blogId" component={EditBlog} />,
       <Route key="profile" path="/profile" component={Profile} />,
       <Route key="schedule" path="/schedule" component={Schedule} />,
       <Route key="blog" path="/blog/:blogId" component={Blog} />,

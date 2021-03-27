@@ -30,6 +30,8 @@ const BlogProvider = (props) => {
       },
     })
       .then((res) => {
+        const filteredBlogs = blogs.filter((blog) => blog.id !== res.data.id);
+        setBlogs([res.data, ...filteredBlogs]);
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -51,6 +53,7 @@ const BlogProvider = (props) => {
     blogs,
     setBlogs,
     removeBlog,
+    editBlog,
   };
 
   // TODO: handle delete function

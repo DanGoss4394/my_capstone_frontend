@@ -10,7 +10,7 @@ const Home = () => {
   const renderBlogs = () => {
     return blogs.map((blog) => {
       return (
-        <div>
+        <div key={blog.id}>
           <h1>{blog.title}</h1>
           <p>{blog.content}</p>
           {userId === blog.user_id && (
