@@ -20,16 +20,6 @@ const Navigation = () => {
       </div>
 
       <div className="right">
-        {/* <div className="nav-link">
-          {loggedInStatus === "LOGGED_IN" ? (
-            <LogoutBtn />
-          ) : (
-            <NavLink to="/auth" activeClassName="nav-link-active">
-              <button className="nav_btn">Login</button>
-            </NavLink>
-          )}
-        </div> */}
-
         {loggedInStatus === "LOGGED_IN" ? (
           <>
             <div className="nav-link">
