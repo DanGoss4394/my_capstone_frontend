@@ -28,7 +28,6 @@ const BlogForm = () => {
     })
       .then((res) => {
         history.push("/");
-        console.log(res);
       })
       .catch((err) => console.log(err));
   };

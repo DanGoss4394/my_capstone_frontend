@@ -25,7 +25,6 @@ const AuthForm = () => {
     })
       .then((res) => {
         if (res.data.message === "User Verified") {
-          console.log(res);
           handleSuccessfulLogin(res.data.user_id);
         }
       })
