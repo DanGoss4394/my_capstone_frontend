@@ -6,6 +6,7 @@
   .left {
     display: flex;
     align-items: flex-end;
+    padding-left: 5px;
   }
 
   .middle {
@@ -18,7 +19,8 @@
 
   .right {
     display: grid;
-    grid-template-rows: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-right: 10px;
 
     .right_top {
       display: flex;
