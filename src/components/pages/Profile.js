@@ -1,11 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
+
 import AuthContext from "../contexts/AuthContext";
 import BlogContext from "../contexts/BlogContext";
 
 const Profile = () => {
   const { blogs, removeBlog } = useContext(BlogContext);
   const { userId } = useContext(AuthContext);
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: `https://secure.gravatar.com/xmlrpc?user=[email_hash]`,
+      withCredentials: true,
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, []);
 
   const renderBlogs = () => {
     return blogs
@@ -27,7 +39,9 @@ const Profile = () => {
         <h1>Profile page</h1>
       </div>
       <div className="middle_column">
-        <div className="blogs">{renderBlogs()}</div>
+        <Link>
+          <div className="blogs">{renderBlogs()}</div>
+        </Link>
       </div>
       <div className="right_column">
         <div className="top_right_column">
