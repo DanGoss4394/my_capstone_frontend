@@ -40,27 +40,31 @@ const Navigation = () => {
       <div className="right">
         {loggedInStatus === "LOGGED_IN" ? (
           <>
-            <div className="search_bar">
-              <SearchBar />
+            <div className="right_top">
+              <div className="search_bar">
+                <SearchBar />
+              </div>
             </div>
-            <div className="nav-link">
-              <LogoutBtn />
-            </div>
-            <div className="nav-link">
-              <NavLink to="/add-blog" activeClassName="nav-link-active">
-                <button className="nav_btn">Add Blog</button>
-              </NavLink>
-            </div>
+            <div className="right_bottom">
+              <div className="nav-link">
+                <LogoutBtn />
+              </div>
+              <div className="nav-link">
+                <NavLink to="/add-blog" activeClassName="nav-link-active">
+                  <button className="nav_btn">Add Blog</button>
+                </NavLink>
+              </div>
 
-            <div className="nav-link">
-              <NavLink to="/profile" activeClassName="nav-link-active">
-                <button className="nav_btn">Profile</button>
-              </NavLink>
-            </div>
-            <div className="nav-link">
-              <NavLink to="/schedule" activeClassName="nav-link-active">
-                <button className="nav_btn">Schedules</button>
-              </NavLink>
+              <div className="nav-link">
+                <NavLink to="/profile" activeClassName="nav-link-active">
+                  <button className="nav_btn">Profile</button>
+                </NavLink>
+              </div>
+              <div className="nav-link">
+                <NavLink to="/schedule" activeClassName="nav-link-active">
+                  <button className="nav_btn">Schedules</button>
+                </NavLink>
+              </div>
             </div>
           </>
         ) : (

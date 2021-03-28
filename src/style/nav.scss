@@ -17,9 +17,20 @@
   }
 
   .right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+
+    .right_top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .right_bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
   }
 
   .nav-link {
