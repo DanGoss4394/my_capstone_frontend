@@ -36,7 +36,12 @@ const Profile = () => {
   return (
     <div className="profile_container_wrapper">
       <div className="left_column">
-        <h1>Profile page</h1>
+        <div className="left_top">
+          <h1>Picture</h1>
+        </div>
+        <div className="left_bottom">
+          <h1>about section</h1>
+        </div>
       </div>
       <div className="middle_column">
         <Link>

@@ -3,8 +3,18 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   .left_column {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 0.5fr 6fr;
+
+    .left_top {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .left_bottm {
+      display: flex;
+      justify-content: flex-start;
+    }
   }
 
   .middle_column {
