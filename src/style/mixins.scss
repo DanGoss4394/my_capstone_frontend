@@ -7,3 +7,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+@mixin textarea() {
+  margin-top: 15px;
+  height: 50px;
+  width: 350px;
+}
