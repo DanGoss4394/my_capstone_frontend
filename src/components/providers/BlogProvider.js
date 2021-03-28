@@ -56,13 +56,6 @@ const BlogProvider = (props) => {
     editBlog,
   };
 
-  // TODO: handle delete function
-  // TODO:    if owner of blog delete
-  // TODO:    withCredentials: true
-  // TODO: handle edit function
-  // TODO:    if owner of blog edit
-  // TODO:    withCredentials: true
-
   return (
     <BlogContext.Provider value={state}>{props.children}</BlogContext.Provider>
   );
