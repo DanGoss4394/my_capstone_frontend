@@ -16,7 +16,9 @@
 
     .content,
     .description {
-      @include textarea();
+      textarea {
+        @include textarea();
+      }
     }
   }
 }
