@@ -3,26 +3,9 @@ import { NavLink } from "react-router-dom";
 
 import LogoutBtn from "../Auth/LogoutBtn";
 import AuthContext from "../contexts/AuthContext";
+import SearchBar from "../Search/SearchBar";
 
 const Navigation = () => {
-  const SearchBar = ({ keyword, setKeyword }) => {
-    const BarStyling = {
-      width: "20rem",
-      background: "#F2F1F9",
-      border: "none",
-      padding: "0.5rem",
-    };
-    return (
-      <input
-        style={BarStyling}
-        key="random1"
-        value={keyword}
-        placeholder={"search"}
-        onChange={(e) => setKeyword(e.target.value)}
-      />
-    );
-  };
-
   const { loggedInStatus } = useContext(AuthContext);
   return (
     <div className="nav-bar-wrapper">

@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import AuthContext from "./contexts/AuthContext";
 import Nomatch from "./pages/Nomatch";
 import EditBlog from "./pages/EditBlog";
+import PublicProfile from "./pages/PublicProfile";
 
 function App() {
   const { loggedInStatus } = useContext(AuthContext);
@@ -21,6 +22,11 @@ function App() {
       <Route key="add-blog" path="/add-blog" component={AddBlog} />,
       <Route key="edit-blog" path="/edit-blog/:blogId" component={EditBlog} />,
       <Route key="profile" path="/profile" component={Profile} />,
+      <Route
+        key="public-profile"
+        path="/public-profile/:username"
+        component={PublicProfile}
+      />,
       <Route key="schedule" path="/schedule" component={Schedule} />,
       <Route key="blog" path="/blog/:blogId" component={Blog} />,
     ];
