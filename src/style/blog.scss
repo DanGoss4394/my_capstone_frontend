@@ -1,6 +1,15 @@
 .blog-content-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @include responsive(tab-port) {
+    grid-template-columns: 1fr 1fr;
+    font-size: 12px;
+  }
+  @include responsive(phone) {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    font-size: 10px;
+  }
 
   .heading {
     display: flex;

@@ -2,6 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: $violet;
+  @include responsive(tab-port) {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    font-size: 12px;
+  }
+  @include responsive(phone) {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    font-size: 10px;
+  }
 
   .left {
     display: flex;
