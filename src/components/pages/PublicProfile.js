@@ -1,18 +1,13 @@
-import React, { useContext } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 import { API_URL } from "../../api/api";
 import { useState } from "react";
-import BlogContext from "../contexts/BlogContext";
-import AuthContext from "../contexts/AuthContext";
 
 const PublicProfile = () => {
   const [user, setUser] = useState({});
-
-  const { blogs } = useContext(BlogContext);
-  const { userId } = useContext(AuthContext);
+  const [blogs, setBlogs] = useState([]);
 
   let { username } = useParams();
 
@@ -26,6 +21,7 @@ const PublicProfile = () => {
 
         if (res.data !== "Username NOT found") {
           setUser(res.data);
+          setBlogs(res.data.blogs);
         } else {
           setUser({});
         }
@@ -35,16 +31,14 @@ const PublicProfile = () => {
   }, [username]);
 
   const renderBlogs = () => {
-    return blogs
-      .filter((blog) => userId === blog.user_id)
-      .map((blog) => {
-        return (
-          <div key={blog.id}>
-            <h1>{blog.title}</h1>
-            <p>{blog.content}</p>
-          </div>
-        );
-      });
+    return blogs.map((blog) => {
+      return (
+        <div key={blog.id}>
+          <h1>{blog.title}</h1>
+          <p>{blog.content}</p>
+        </div>
+      );
+    });
   };
 
   return (
