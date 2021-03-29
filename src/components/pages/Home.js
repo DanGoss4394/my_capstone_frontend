@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 import BlogContext from "../contexts/BlogContext";
 
@@ -28,9 +28,7 @@ const Home = () => {
           <h1>Followers</h1>
         </div>
         <div className="middle_column">
-          <Link>
-            <div className="blogs">{renderBlogs()}</div>
-          </Link>
+          <div className="blogs">{renderBlogs()}</div>
         </div>
         <div className="right_column">
           <h1>Schedule</h1>
