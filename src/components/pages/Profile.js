@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
-// import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 import AuthContext from "../contexts/AuthContext";
 import BlogContext from "../contexts/BlogContext";
+import { API_URL } from "../../api/api";
 
 const Profile = () => {
+  const [user, setUser] = useState("");
+
   const { blogs, removeBlog } = useContext(BlogContext);
   const { userId } = useContext(AuthContext);
+  let { username } = useParams();
 
   // useEffect(() => {
   //   axios({
@@ -18,6 +22,18 @@ const Profile = () => {
   //     .then((res) => console.log(res))
   //     .catch((err) => console.log(err));
   // }, []);
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: `${API_URL}v1/get_user/${username}`,
+    })
+      .then((res) => {
+        setUser(res.data);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }, [username]);
 
   const renderBlogs = () => {
     return blogs
@@ -49,7 +65,9 @@ const Profile = () => {
         </div>
       </div>
       <div className="middle_column">
-        <div className="top_middle">Welcome Home{}</div>
+        <div className="top_middle">
+          <h1>Welcome Home {username}</h1>
+        </div>
         <div className="bottom_middle">
           <div className="blogs">{renderBlogs()}</div>
         </div>

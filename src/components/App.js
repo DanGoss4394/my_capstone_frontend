@@ -35,11 +35,18 @@ function App() {
     <div className="App">
       <Navigation />
       <Switch>
+        {loggedInStatus === "LOGGED_IN" && authorizedPages()}
         <Route exact path="/" component={Home} />
         <Route path="/auth" component={Auth} />
 
-        {loggedInStatus === "LOGGED_IN" && authorizedPages()}
         <Route component={Nomatch} />
+
+        {/* {loggedInStatus === "LOGGED_IN" ? (
+          <Route exact path="/" component={Home} /> && authorizedPages()
+        ) : (
+          <Route exact path="/auth" component={Auth} />
+        )}
+        <Route component={Nomatch} /> */}
       </Switch>
     </div>
   );
