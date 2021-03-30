@@ -7,6 +7,10 @@ import { API_URL } from "../../api/api";
 const BlogProvider = (props) => {
   const [blogs, setBlogs] = useState([]);
 
+  // const blogComment = () => {
+
+  // }
+
   const removeBlog = (id) => {
     axios({
       method: "delete",

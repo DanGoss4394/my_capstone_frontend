@@ -18,6 +18,7 @@ const Home = () => {
         <div key={blog.id} style={BlogStyles}>
           <h2>{blog.title}</h2>
           <p>{blog.content}</p>
+          <button>Comment</button>
           {userId === blog.user_id && (
             <button onClick={() => removeBlog(blog.id)}>Remove</button>
           )}
