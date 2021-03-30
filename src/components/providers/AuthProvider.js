@@ -6,6 +6,8 @@ import AuthContext from "../contexts/AuthContext";
 import { API_URL } from "../../api/api";
 
 const AuthProvider = (props) => {
+  const [username, setUsername] = useState({});
+
   const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
   const [userId, setUserId] = useState(null);
   let history = useHistory();
@@ -19,7 +21,9 @@ const AuthProvider = (props) => {
       .then((res) => {
         if (res.data.message === "User Loggedin Via Cookie") {
           setUserId(res.data.user_id);
+          setUsername(res.data.username);
           setLoggedInStatus("LOGGED_IN");
+          console.log(res);
         }
       })
       .catch((err) => console.log(err));
@@ -50,6 +54,7 @@ const AuthProvider = (props) => {
     handleSuccessfulLogin,
     handleSuccessfulLogout,
     userId,
+    username,
   };
 
   return (

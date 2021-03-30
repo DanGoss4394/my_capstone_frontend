@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import { useState } from "react";
 
 import { API_URL } from "../../api/api";
-import { useState } from "react";
 
 const PublicProfile = () => {
   const [user, setUser] = useState({});
   const [blogs, setBlogs] = useState([]);
 
+  let history = useHistory();
   let { username } = useParams();
 
   useEffect(() => {
@@ -23,11 +24,13 @@ const PublicProfile = () => {
           setUser(res.data);
           setBlogs(res.data.blogs);
         } else {
+          history.push("/nomatch");
           setUser({});
         }
       })
 
       .catch((err) => console.log(err));
+    // eslint-disable-next-line
   }, [username]);
 
   const BlogStyles = {
@@ -58,6 +61,9 @@ const PublicProfile = () => {
           </div>
         </div>
         <div className="middle_column">
+          <div className="users_profile">
+            <h1>{username}'s Profile</h1>
+          </div>
           <div className="blogs" style={BlogStyles}>
             {renderBlogs(user)}
           </div>
