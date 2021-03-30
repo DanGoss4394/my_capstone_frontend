@@ -1,5 +1,7 @@
 .blog-content-wrapper {
   display: grid;
+  // gap: 10px;
+  border: 2px solid black;
   // grid-template-columns: 1fr 1fr;
   @include responsive(tab-port) {
     // grid-template-columns: 1fr 1fr;

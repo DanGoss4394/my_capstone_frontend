@@ -1,6 +1,9 @@
 .profile_container_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  border: 2px solid black;
+
   @include responsive(tab-port) {
     grid-template-columns: 1fr 1fr;
     font-size: 12px;
@@ -14,15 +17,19 @@
   .left_column {
     display: grid;
     grid-template-rows: 0.5fr 6fr;
+    border: 2px solid black;
 
     .left_top {
-      display: flex;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: 0.5fr 3fr;
+      background-color: $silver;
+      border: 2px solid black;
     }
 
-    .left_bottm {
+    .left_bottom {
       display: flex;
       justify-content: flex-start;
+      border: 2px solid black;
     }
   }
 
@@ -40,17 +47,21 @@
   .right_column {
     display: grid;
     grid-template-rows: 1fr 6fr;
+    border: 2px solid black;
   }
 
   .top_right_column {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $silver;
+    border: 2px solid black;
   }
 
   .bottum_right_column {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid black;
   }
 }

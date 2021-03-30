@@ -1,6 +1,9 @@
 .home_container_wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.2fr 1fr 1fr;
+  gap: 10px;
+  border: 2px solid black;
+
   @include responsive(tab-port) {
     grid-template-columns: 1fr 1fr;
     font-size: 12px;
@@ -14,6 +17,8 @@
   .left_column {
     display: flex;
     justify-content: center;
+    background-color: $silver;
+    border: 2px solid black;
   }
 
   .middle_column {
@@ -30,5 +35,6 @@
   .right_column {
     display: flex;
     justify-content: center;
+    border: 2px solid black;
   }
 }

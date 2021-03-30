@@ -25,7 +25,7 @@ const Profile = () => {
       .map((blog) => {
         return (
           <div key={blog.id} style={BlogStyles}>
-            <h1>{blog.title}</h1>
+            <h2>{blog.title}</h2>
             <p>{blog.content}</p>
             <button onClick={() => removeBlog(blog.id)}>Remove</button>
             <Link to={`/edit-blog/${blog.id}`}>Edit</Link>
@@ -49,7 +49,10 @@ const Profile = () => {
         </div>
       </div>
       <div className="middle_column">
-        <div className="blogs">{renderBlogs()}</div>
+        <div className="top_middle">Welcome Home{}</div>
+        <div className="bottom_middle">
+          <div className="blogs">{renderBlogs()}</div>
+        </div>
       </div>
       <div className="right_column">
         <div className="top_right_column">

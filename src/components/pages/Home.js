@@ -16,7 +16,7 @@ const Home = () => {
     return blogs.map((blog) => {
       return (
         <div key={blog.id} style={BlogStyles}>
-          <h1>{blog.title}</h1>
+          <h2>{blog.title}</h2>
           <p>{blog.content}</p>
           {userId === blog.user_id && (
             <button onClick={() => removeBlog(blog.id)}>Remove</button>

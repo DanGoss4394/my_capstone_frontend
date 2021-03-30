@@ -39,7 +39,7 @@ const PublicProfile = () => {
     return blogs.map((blog) => {
       return (
         <div key={blog.id}>
-          <h1>{blog.title}</h1>
+          <h2>{blog.title}</h2>
           <p>{blog.content}</p>
         </div>
       );

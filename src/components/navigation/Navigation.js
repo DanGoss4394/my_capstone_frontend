@@ -11,13 +11,15 @@ const Navigation = () => {
     <div className="nav-bar-wrapper">
       <div className="left">
         <div className="nav-link">
-          <NavLink exact to="/" activeClassName="nav-link-active">
-            Home
+          <NavLink
+            exact
+            to="/"
+            activeClassName="nav-link-active"
+            className="logo"
+          >
+            <h1>SFANS</h1>
           </NavLink>
         </div>
-      </div>
-      <div className="middle">
-        <h1>SFANS</h1>
       </div>
 
       <div className="right">
