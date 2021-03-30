@@ -1,3 +1,9 @@
+# My CapStone
+
+This app was built with all the knowlege i gained through Bottage.
+I made this social media app for my capstone for Bottage Course for anyone that would likes to do vlogs, blogs.
+This was really challenging for me but was really fun to build. At this moment this app only allows you to make a user create, edit, and delete blogs. visit other users profiles.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

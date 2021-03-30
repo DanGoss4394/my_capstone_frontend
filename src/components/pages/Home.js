@@ -7,10 +7,15 @@ const Home = () => {
   const { blogs, removeBlog } = useContext(BlogContext);
   const { userId, loggedInStatus } = useContext(AuthContext);
 
+  const BlogStyles = {
+    border: "2px solid #000",
+    background: "#c4cad0",
+  };
+
   const renderBlogs = () => {
     return blogs.map((blog) => {
       return (
-        <div key={blog.id}>
+        <div key={blog.id} style={BlogStyles}>
           <h1>{blog.title}</h1>
           <p>{blog.content}</p>
           {userId === blog.user_id && (

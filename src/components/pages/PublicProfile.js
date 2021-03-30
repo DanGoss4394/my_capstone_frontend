@@ -30,6 +30,11 @@ const PublicProfile = () => {
       .catch((err) => console.log(err));
   }, [username]);
 
+  const BlogStyles = {
+    border: "2px solid #000",
+    background: "#c4cad0",
+  };
+
   const renderBlogs = () => {
     return blogs.map((blog) => {
       return (
@@ -53,7 +58,9 @@ const PublicProfile = () => {
           </div>
         </div>
         <div className="middle_column">
-          <div className="blogs">{renderBlogs(user)}</div>
+          <div className="blogs" style={BlogStyles}>
+            {renderBlogs(user)}
+          </div>
         </div>
         <div className="right_column">
           <div className="top_right_column">

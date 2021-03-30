@@ -7,9 +7,9 @@ import AuthContext from "../contexts/AuthContext";
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
-  const [videoTitle, setVideoTitle] = useState("");
+  // const [videoTitle, setVideoTitle] = useState("");
   const [content, setContent] = useState("");
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
 
   const { userId } = useContext(AuthContext);
   let history = useHistory();
@@ -41,6 +41,7 @@ const BlogForm = () => {
           <div className="inputfield">
             <div className="title">
               <input
+                required
                 type="text"
                 name="title"
                 placeholder="Title.."
@@ -51,6 +52,7 @@ const BlogForm = () => {
 
             <div className="content">
               <textarea
+                required
                 type="text"
                 name="content"
                 placeholder="Content.."
@@ -64,7 +66,7 @@ const BlogForm = () => {
           </div>
         </div>
 
-        <div className="video">
+        {/* <div className="video">
           <div className="heading">
             <h1>Add a Video</h1>
           </div>
@@ -91,7 +93,7 @@ const BlogForm = () => {
               Submit Video
             </button>
           </div>
-        </div>
+        </div> */}
       </form>
     </div>
   );

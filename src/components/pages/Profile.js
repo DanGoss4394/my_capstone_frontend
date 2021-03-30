@@ -33,6 +33,11 @@ const Profile = () => {
         );
       });
   };
+
+  const BlogStyles = {
+    border: "2px solid #000",
+    background: "#c4cad0",
+  };
   return (
     <div className="profile_container_wrapper">
       <div className="left_column">
@@ -44,7 +49,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="middle_column">
-        <div className="blogs">{renderBlogs()}</div>
+        <div className="blogs" style={BlogStyles}>{renderBlogs()}</div>
       </div>
       <div className="right_column">
         <div className="top_right_column">
