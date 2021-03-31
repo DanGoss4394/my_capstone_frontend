@@ -23,7 +23,7 @@ const PublicProfile = () => {
           setUser(res.data);
           setBlogs(res.data.blogs);
         } else {
-          setUser({});
+          setUser("");
           history.push("/nomatch");
         }
       })
