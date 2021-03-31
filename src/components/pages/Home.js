@@ -20,7 +20,7 @@ const Home = () => {
           <p>{blog.content}</p>
           <button>Comment</button>
           {userId === blog.user_id && (
-            <button onClick={() => removeBlog(blog.id)}>Remove</button>
+            <button onClick={() => {removeBlog(blog.id)}}>Remove</button>
           )}
         </div>
       );

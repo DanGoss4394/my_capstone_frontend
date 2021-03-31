@@ -9,6 +9,7 @@ const AuthForm = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [formToShow, setFormToShow] = useState("login");
 
   const { handleSuccessfulLogin } = useContext(AuthContext);
@@ -23,11 +24,13 @@ const AuthForm = () => {
         username,
         password,
         email,
+        avatar,
       },
       withCredentials: true,
     })
       .then((res) => {
         if (res.data.message === "User Verified") {
+          setAvatar(`https://www.gravatar.com/avatar/${email}?d=identicon`);
           handleSuccessfulLogin(res.data.user_id);
           history.push("/");
         }

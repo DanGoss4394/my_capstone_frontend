@@ -8,8 +8,8 @@ const SearchBar = (props) => {
 
   const SearchData = (e) => {
     e.preventDefault();
-    history.push(`/public-profile/${input}`);
     setInput("");
+    history.push(`/public-profile/${input}`);
   };
 
   const BarStyling = {

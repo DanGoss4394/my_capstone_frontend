@@ -7,9 +7,10 @@ import { API_URL } from "../../api/api";
 
 const AuthProvider = (props) => {
   const [username, setUsername] = useState({});
-
-  const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
   const [userId, setUserId] = useState(null);
+  const [avatar, setAvatar] = useState();
+  const [loggedInStatus, setLoggedInStatus] = useState("NOT_LOGGED_IN");
+
   let history = useHistory();
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const AuthProvider = (props) => {
         if (res.data.message === "User Loggedin Via Cookie") {
           setUserId(res.data.user_id);
           setUsername(res.data.username);
+          setAvatar(res.data.avatar)
           setLoggedInStatus("LOGGED_IN");
           console.log(res);
         }
@@ -55,6 +57,7 @@ const AuthProvider = (props) => {
     handleSuccessfulLogout,
     userId,
     username,
+    avatar,
   };
 
   return (

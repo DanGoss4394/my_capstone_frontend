@@ -7,7 +7,7 @@ import BlogContext from "../contexts/BlogContext";
 
 const Profile = () => {
   const { blogs, removeBlog } = useContext(BlogContext);
-  const { userId, username } = useContext(AuthContext);
+  const { userId, username, avatar } = useContext(AuthContext);
 
   const renderBlogs = () => {
     return blogs
@@ -33,7 +33,7 @@ const Profile = () => {
     <div className="profile_container_wrapper">
       <div className="left_column">
         <div className="left_top">
-          <h1>Picture</h1>
+          <img src={avatar} alt="Profile Avatar" />
         </div>
         <div className="left_bottom">
           <h1>about section</h1>

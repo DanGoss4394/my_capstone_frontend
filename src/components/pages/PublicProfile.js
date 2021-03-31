@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
-import { useState } from "react";
 
 import { API_URL } from "../../api/api";
 
@@ -24,8 +23,8 @@ const PublicProfile = () => {
           setUser(res.data);
           setBlogs(res.data.blogs);
         } else {
-          history.push("/nomatch");
           setUser({});
+          history.push("/nomatch");
         }
       })
 

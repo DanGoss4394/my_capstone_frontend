@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthForm from "../Auth/AuthForm";
-// import LogoutBtn from "../Auth/LogoutBtn";
 
 import AuthContext from "../contexts/AuthContext";
 
