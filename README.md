@@ -10,10 +10,10 @@ This was really challenging for me but was really fun to build. At this moment t
 
 # Packages I Used an The Docs
 
-[React](https://reactjs.org/docs/getting-started.html)
-[Axios](https://www.npmjs.com/package/axios)
-[React Router Dom](https://reactrouter.com/web/guides/quick-start)
-[SCSS](https://sass-lang.com/documentation) <!-- to use scss in react you need to install node-sass -->
+- [React](https://reactjs.org/docs/getting-started.html)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [SCSS](https://sass-lang.com/documentation) <!-- to use scss in react you need to install node-sass -->
 
 # Getting Started with Create React App
 
