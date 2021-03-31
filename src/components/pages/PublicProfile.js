@@ -17,7 +17,6 @@ const PublicProfile = () => {
       url: `${API_URL}v1/get_user/${username}`,
     })
       .then((res) => {
-        console.log(res);
 
         if (res.data !== "Username NOT found") {
           setUser(res.data);

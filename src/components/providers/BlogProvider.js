@@ -7,9 +7,11 @@ import { API_URL } from "../../api/api";
 const BlogProvider = (props) => {
   const [blogs, setBlogs] = useState([]);
 
-  // const blogComment = () => {
 
-  // }
+  const handleAddBlog = (blog) => {
+    setBlogs([blog, ...blogs]);
+    // setBlogs(blogs.concat(blog));
+  };
 
   const removeBlog = (id) => {
     axios({
@@ -55,6 +57,7 @@ const BlogProvider = (props) => {
     setBlogs,
     removeBlog,
     editBlog,
+    handleAddBlog,
   };
 
   return (

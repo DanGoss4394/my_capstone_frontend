@@ -25,7 +25,6 @@ const AuthProvider = (props) => {
           setUsername(res.data.username);
           setAvatar(res.data.avatar);
           setLoggedInStatus("LOGGED_IN");
-          console.log(res);
         }
       })
       .catch((err) => console.log(err));

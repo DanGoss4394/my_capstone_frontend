@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { API_URL } from "../../api/api";
 import AuthContext from "../contexts/AuthContext";
+import BlogContext from "../contexts/BlogContext";
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
@@ -11,6 +12,7 @@ const BlogForm = () => {
   const [content, setContent] = useState("");
   // const [description, setDescription] = useState("");
 
+  const { handleAddBlog } = useContext(BlogContext);
   const { userId } = useContext(AuthContext);
   let history = useHistory();
 
@@ -27,6 +29,7 @@ const BlogForm = () => {
       withCredentials: true,
     })
       .then((res) => {
+        handleAddBlog(res.data);
         history.push("/");
       })
       .catch((err) => console.log(err));
