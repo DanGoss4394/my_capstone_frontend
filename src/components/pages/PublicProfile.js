@@ -44,6 +44,7 @@ const PublicProfile = () => {
         <div key={blog.id}>
           <h2>{blog.title}</h2>
           <p>{blog.content}</p>
+          <button>Comment</button>
         </div>
       );
     });

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
 
 import AuthContext from "../contexts/AuthContext";
@@ -8,16 +9,6 @@ const Profile = () => {
   const { blogs, removeBlog } = useContext(BlogContext);
   const { userId, username } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   axios({
-  //     method: "get",
-  //     url: `https://secure.gravatar.com/xmlrpc?user=[email_hash]`,
-  //     withCredentials: true,
-  //   })
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   const renderBlogs = () => {
     return blogs
       .filter((blog) => userId === blog.user_id)
@@ -26,6 +17,7 @@ const Profile = () => {
           <div key={blog.id} style={BlogStyles}>
             <h2>{blog.title}</h2>
             <p>{blog.content}</p>
+            <button>Comment</button>
             <button onClick={() => removeBlog(blog.id)}>Remove</button>
             <Link to={`/edit-blog/${blog.id}`}>Edit</Link>
           </div>
